@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b86g31lgmqny4"]
+
+[ext_resource type="Texture2D" uid="uid://dt260jwwxd3jb" path="res://Assets/background_tile.png" id="1_6pedr"]
+[ext_resource type="Texture2D" uid="uid://n030o1fpysij" path="res://Assets/interface/interface_background.png" id="2_syfuq"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 224.0
+offset_bottom = 128.0
+scale = Vector2(6, 6)
+texture = ExtResource("1_6pedr")
+stretch_mode = 1
+
+[node name="Table" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(672.5, 374)
+rotation = 6.28319
+scale = Vector2(33.0313, 20.0625)
+texture = ExtResource("2_syfuq")

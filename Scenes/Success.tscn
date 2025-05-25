@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://bosdgrq1sp2ve"]
+
+[ext_resource type="PackedScene" uid="uid://b86g31lgmqny4" path="res://Scenes/Interface_Background.tscn" id="1_emt0t"]
+[ext_resource type="FontFile" uid="uid://bupmfe0up7ec5" path="res://Assets/font.ttf" id="2_11ffa"]
+[ext_resource type="Texture2D" uid="uid://ckio5nrtyiv0u" path="res://Assets/interface/panda_2.png" id="3_bva23"]
+[ext_resource type="Texture2D" uid="uid://bo7ucus2wix56" path="res://Assets/interface/panda_1.png" id="4_3t0f3"]
+
+[sub_resource type="Animation" id="Animation_3xa3g"]
+resource_name = "dancing_panda"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_bva23"), ExtResource("4_3t0f3")]
+}
+
+[sub_resource type="Animation" id="Animation_qmt1n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_bva23")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5yr48"]
+_data = {
+&"RESET": SubResource("Animation_qmt1n"),
+&"dancing_panda": SubResource("Animation_3xa3g")
+}
+
+[node name="Success" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_emt0t")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 315.0
+offset_top = 342.0
+offset_right = 821.0
+offset_bottom = 364.0
+color = Color(0.690196, 0, 0.192157, 0.247059)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 356.0
+offset_top = 170.0
+offset_right = 1189.0
+offset_bottom = 347.0
+theme_override_colors/font_color = Color(0.278431, 0, 0.054902, 1)
+theme_override_colors/font_shadow_color = Color(0.941176, 0, 0.278431, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("2_11ffa")
+theme_override_font_sizes/font_size = 120
+text = "SUCCESS!"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 399.0
+offset_right = 737.0
+offset_bottom = 551.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.278431, 0, 0.054902, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_11ffa")
+theme_override_font_sizes/font_size = 80
+text = "PLAY 
+AGAIN"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(995, 464)
+scale = Vector2(9.168, 10)
+texture = ExtResource("3_bva23")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_5yr48")
+}
+autoplay = "dancing_panda"
