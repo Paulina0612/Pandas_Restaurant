@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5p4wy6x4o067"]
+
+[ext_resource type="Texture2D" uid="uid://phvbtcr75oy1" path="res://Assets/kitchen/cutting_board.png" id="1_hubp6"]
+
+[node name="CuttingBoard" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_hubp6")

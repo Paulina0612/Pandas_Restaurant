@@ -1,9 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://bosdgrq1sp2ve"]
+[gd_scene load_steps=9 format=3 uid="uid://bosdgrq1sp2ve"]
 
+[ext_resource type="Script" uid="uid://c1ve3qechjqj3" path="res://Scenes/success.gd" id="1_3t0f3"]
 [ext_resource type="PackedScene" uid="uid://b86g31lgmqny4" path="res://Scenes/Interface_Background.tscn" id="1_emt0t"]
 [ext_resource type="FontFile" uid="uid://bupmfe0up7ec5" path="res://Assets/font.ttf" id="2_11ffa"]
 [ext_resource type="Texture2D" uid="uid://ckio5nrtyiv0u" path="res://Assets/interface/panda_2.png" id="3_bva23"]
 [ext_resource type="Texture2D" uid="uid://bo7ucus2wix56" path="res://Assets/interface/panda_1.png" id="4_3t0f3"]
+
+[sub_resource type="Animation" id="Animation_qmt1n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_bva23")]
+}
 
 [sub_resource type="Animation" id="Animation_3xa3g"]
 resource_name = "dancing_panda"
@@ -22,21 +38,6 @@ tracks/0/keys = {
 "values": [ExtResource("3_bva23"), ExtResource("4_3t0f3")]
 }
 
-[sub_resource type="Animation" id="Animation_qmt1n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_bva23")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5yr48"]
 _data = {
 &"RESET": SubResource("Animation_qmt1n"),
@@ -44,6 +45,7 @@ _data = {
 }
 
 [node name="Success" type="Node2D"]
+script = ExtResource("1_3t0f3")
 
 [node name="Background" parent="." instance=ExtResource("1_emt0t")]
 
@@ -95,3 +97,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_5yr48")
 }
 autoplay = "dancing_panda"
+
+[connection signal="pressed" from="Button" to="." method="_on_play_button_pressed"]

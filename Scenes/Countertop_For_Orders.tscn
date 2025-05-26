@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://tmf2nn0tn4mp"]
+
+[ext_resource type="Texture2D" uid="uid://dqi1tthvayxs3" path="res://Assets/kitchen/countertop_for_orders.png" id="1_qs814"]
+
+[node name="CountertopForOrders" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("1_qs814")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://hhbcbranew5u"]
+
+[ext_resource type="Texture2D" uid="uid://no6cl52jnd3a" path="res://Assets/kitchen/pot.png" id="1_3rhbi"]
+
+[node name="Pot" type="Node2D"]
+
+[node name="Pot" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
+scale = Vector2(6, 6)
+texture = ExtResource("1_3rhbi")

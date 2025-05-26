@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0qs303yx8juo"]
+
+[ext_resource type="Texture2D" uid="uid://dee67wldutmw3" path="res://Assets/kitchen/trash_can.png" id="1_fcl2b"]
+
+[node name="TrashCan" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("1_fcl2b")

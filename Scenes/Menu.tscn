@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://1rg6w6lslywy"]
+[gd_scene load_steps=4 format=3 uid="uid://1rg6w6lslywy"]
 
 [ext_resource type="PackedScene" uid="uid://b86g31lgmqny4" path="res://Scenes/Interface_Background.tscn" id="1_3kf3n"]
+[ext_resource type="Script" uid="uid://c6b63nflcah7u" path="res://Scenes/Menu.gd" id="1_syfuq"]
 [ext_resource type="FontFile" uid="uid://bupmfe0up7ec5" path="res://Assets/font.ttf" id="2_6pedr"]
 
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_syfuq")
 
 [node name="Background" parent="." instance=ExtResource("1_3kf3n")]
 
@@ -52,3 +54,5 @@ theme_override_font_sizes/font_size = 80
 text = "PLAY
 "
 flat = true
+
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]

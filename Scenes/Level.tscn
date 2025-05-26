@@ -1,0 +1,186 @@
+[gd_scene load_steps=18 format=3 uid="uid://b4yull15fye1d"]
+
+[ext_resource type="Script" uid="uid://0j8h1al6ypi3" path="res://Scenes/level.gd" id="1_0ba56"]
+[ext_resource type="Texture2D" uid="uid://dcl77mfx3led8" path="res://Assets/walls/wall.png" id="2_xylue"]
+[ext_resource type="Texture2D" uid="uid://bs0x7l3nqhsq8" path="res://Assets/walls/window.png" id="3_ienac"]
+[ext_resource type="Texture2D" uid="uid://um2vjheled7g" path="res://Assets/kitchen/floor.png" id="3_tj5wv"]
+[ext_resource type="PackedScene" uid="uid://nu467ahxb11x" path="res://Scenes/Empty_Countertop.tscn" id="4_ienac"]
+[ext_resource type="PackedScene" uid="uid://tclfbiuo6v3o" path="res://Scenes/Empty_Countertop_Top.tscn" id="5_5rrr5"]
+[ext_resource type="PackedScene" uid="uid://b81lvjkm3sckx" path="res://Scenes/Oven.tscn" id="7_5rrr5"]
+[ext_resource type="PackedScene" uid="uid://tmf2nn0tn4mp" path="res://Scenes/Countertop_For_Orders.tscn" id="8_5rrr5"]
+[ext_resource type="PackedScene" uid="uid://dmhe0k0urhbmr" path="res://Scenes/Bamboo_Chest.tscn" id="9_esopp"]
+[ext_resource type="PackedScene" uid="uid://d0qs303yx8juo" path="res://Scenes/Trash_can.tscn" id="10_b10nm"]
+[ext_resource type="PackedScene" uid="uid://c5p4wy6x4o067" path="res://Scenes/Cutting_Board.tscn" id="11_fhlu0"]
+[ext_resource type="PackedScene" uid="uid://hhbcbranew5u" path="res://Scenes/Pot.tscn" id="12_b10nm"]
+[ext_resource type="PackedScene" uid="uid://bra37mis0p5p5" path="res://Scenes/Pasta_Box.tscn" id="13_fhlu0"]
+[ext_resource type="PackedScene" uid="uid://dn6q4ydkbvp6m" path="res://Scenes/Tofu_Box.tscn" id="14_44tr1"]
+[ext_resource type="PackedScene" uid="uid://b2ak2347qucxm" path="res://Scenes/Rice_Box.tscn" id="15_pmxqn"]
+[ext_resource type="PackedScene" uid="uid://0gjgvmu0uayo" path="res://Scenes/Plate_With_Tortillas.tscn" id="16_gs5q7"]
+[ext_resource type="PackedScene" uid="uid://3wxictvrov2" path="res://Scenes/Player.tscn" id="17_pmxqn"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_0ba56")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Walls" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 64.0
+scale = Vector2(5, 5)
+texture = ExtResource("2_xylue")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(222, 142)
+scale = Vector2(6, 6)
+texture = ExtResource("3_ienac")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(1082, 166)
+scale = Vector2(6, 6)
+texture = ExtResource("3_ienac")
+
+[node name="Floor" type="TextureRect" parent="Background"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 286.0
+offset_right = 448.0
+offset_bottom = 447.0
+scale = Vector2(3, 3)
+texture = ExtResource("3_tj5wv")
+stretch_mode = 1
+
+[node name="Furniture" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Countertops" type="Control" parent="Furniture"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EmptyCountertop3" parent="Furniture/Countertops" instance=ExtResource("4_ienac")]
+position = Vector2(383, 191)
+
+[node name="CountertopForOrders" parent="Furniture/Countertops" instance=ExtResource("8_5rrr5")]
+position = Vector2(1248, 287)
+
+[node name="EmptyCountertop" parent="Furniture/Countertops" instance=ExtResource("4_ienac")]
+position = Vector2(575, 191)
+
+[node name="EmptyCountertopTop3" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
+position = Vector2(1249, 673)
+
+[node name="EmptyCountertop2" parent="Furniture/Countertops" instance=ExtResource("4_ienac")]
+position = Vector2(192, 191)
+
+[node name="EmptyCountertopTop" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
+position = Vector2(95, 288)
+
+[node name="EmptyCountertopTop2" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
+position = Vector2(96, 672)
+
+[node name="EmptyCountertopTop4" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
+position = Vector2(1057, 672)
+
+[node name="Oven" parent="Furniture" instance=ExtResource("7_5rrr5")]
+position = Vector2(96, 480)
+
+[node name="BambooChest" parent="Furniture" instance=ExtResource("9_esopp")]
+position = Vector2(1062, 294)
+
+[node name="TrashCan" parent="Furniture" instance=ExtResource("10_b10nm")]
+position = Vector2(860, 284)
+
+[node name="CuttingBoard" parent="Furniture" instance=ExtResource("11_fhlu0")]
+position = Vector2(671, 260)
+
+[node name="Decorations" type="Control" parent="Furniture"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pots" type="Control" parent="Furniture/Decorations"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pot" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1290, 581)
+
+[node name="Pot2" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1287, 632)
+
+[node name="Pot3" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1296, 678)
+
+[node name="Pot4" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1291, 722)
+
+[node name="Pasta" type="Control" parent="Furniture/Decorations"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PastaBox" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1189, 565)
+
+[node name="PastaBox2" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1193, 612)
+
+[node name="PastaBox3" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1192, 648)
+
+[node name="PastaBox4" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1198, 695)
+
+[node name="PastaBox5" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1199, 741)
+
+[node name="Tofu_Boxes" type="Control" parent="Furniture/Decorations"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TofuBox" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(996, 576)
+
+[node name="TofuBox2" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(995, 623)
+
+[node name="TofuBox3" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(1046, 576)
+
+[node name="TofuBox4" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(1046, 623)
+
+[node name="Rice_Boxes" type="Control" parent="Furniture/Decorations"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RiceBox" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1098, 577)
+
+[node name="RiceBox2" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1138, 576)
+
+[node name="RiceBox3" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1097, 615)
+
+[node name="RiceBox4" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1143, 616)
+
+[node name="PlateWithTortillas" parent="Furniture/Decorations" instance=ExtResource("16_gs5q7")]
+position = Vector2(1063, 706)
+
+[node name="Player" parent="." instance=ExtResource("17_pmxqn")]
+position = Vector2(635, 502)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://nu467ahxb11x"]
+
+[ext_resource type="Texture2D" uid="uid://cco1igeexjay5" path="res://Assets/kitchen/countertop.png" id="1_dpeyl"]
+
+[node name="EmptyCountertop" type="Node2D"]
+
+[node name="Contertop" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(96, 96)
+scale = Vector2(6, 6)
+texture = ExtResource("1_dpeyl")

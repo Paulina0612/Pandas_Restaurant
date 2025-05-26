@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn6q4ydkbvp6m"]
+
+[ext_resource type="Texture2D" uid="uid://cjlldcw43s6e6" path="res://Assets/food/tofu.png" id="1_puck3"]
+
+[node name="TofuBox" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_puck3")

@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://wnbcpmh2viiu"]
+[gd_scene load_steps=4 format=3 uid="uid://wnbcpmh2viiu"]
 
 [ext_resource type="PackedScene" uid="uid://b86g31lgmqny4" path="res://Scenes/Interface_Background.tscn" id="1_bcdu1"]
+[ext_resource type="Script" uid="uid://cf4raxwtcbh34" path="res://Scenes/fail.gd" id="1_c77n3"]
 [ext_resource type="FontFile" uid="uid://bupmfe0up7ec5" path="res://Assets/font.ttf" id="2_w08p6"]
 
 [node name="Fail" type="Node2D"]
+script = ExtResource("1_c77n3")
 
 [node name="Background" parent="." instance=ExtResource("1_bcdu1")]
 
@@ -41,3 +43,5 @@ offset_top = 367.0
 offset_right = 1091.0
 offset_bottom = 395.0
 color = Color(0.690196, 0, 0.192157, 0.247059)
+
+[connection signal="pressed" from="Button" to="." method="_on_play_button_pressed"]
