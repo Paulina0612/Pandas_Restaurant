@@ -56,131 +56,143 @@ scale = Vector2(3, 3)
 texture = ExtResource("3_tj5wv")
 stretch_mode = 1
 
-[node name="Furniture" type="Control" parent="."]
+[node name="Middle" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Countertops" type="Control" parent="Furniture"]
+[node name="Countertops" type="Control" parent="Middle"]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="EmptyCountertop3" parent="Furniture/Countertops" instance=ExtResource("4_ienac")]
+[node name="EmptyCountertop3" parent="Middle/Countertops" instance=ExtResource("4_ienac")]
 position = Vector2(383, 191)
 
-[node name="CountertopForOrders" parent="Furniture/Countertops" instance=ExtResource("8_5rrr5")]
+[node name="CountertopForOrders" parent="Middle/Countertops" instance=ExtResource("8_5rrr5")]
 position = Vector2(1248, 287)
 
-[node name="EmptyCountertop" parent="Furniture/Countertops" instance=ExtResource("4_ienac")]
+[node name="EmptyCountertop" parent="Middle/Countertops" instance=ExtResource("4_ienac")]
 position = Vector2(575, 191)
 
-[node name="EmptyCountertopTop3" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
-position = Vector2(1249, 673)
-
-[node name="EmptyCountertop2" parent="Furniture/Countertops" instance=ExtResource("4_ienac")]
+[node name="EmptyCountertop2" parent="Middle/Countertops" instance=ExtResource("4_ienac")]
 position = Vector2(192, 191)
 
-[node name="EmptyCountertopTop" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
+[node name="EmptyCountertopTop" parent="Middle/Countertops" instance=ExtResource("5_5rrr5")]
 position = Vector2(95, 288)
 
-[node name="EmptyCountertopTop2" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
+[node name="EmptyCountertopTop2" parent="Middle/Countertops" instance=ExtResource("5_5rrr5")]
 position = Vector2(96, 672)
 
-[node name="EmptyCountertopTop4" parent="Furniture/Countertops" instance=ExtResource("5_5rrr5")]
-position = Vector2(1057, 672)
-
-[node name="Oven" parent="Furniture" instance=ExtResource("7_5rrr5")]
+[node name="Oven" parent="Middle" instance=ExtResource("7_5rrr5")]
 position = Vector2(96, 480)
 
-[node name="BambooChest" parent="Furniture" instance=ExtResource("9_esopp")]
-position = Vector2(1062, 294)
-
-[node name="TrashCan" parent="Furniture" instance=ExtResource("10_b10nm")]
+[node name="TrashCan" parent="Middle" instance=ExtResource("10_b10nm")]
 position = Vector2(860, 284)
 
-[node name="CuttingBoard" parent="Furniture" instance=ExtResource("11_fhlu0")]
+[node name="CuttingBoard" parent="Middle" instance=ExtResource("11_fhlu0")]
 position = Vector2(671, 260)
 
-[node name="Decorations" type="Control" parent="Furniture"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Pots" type="Control" parent="Furniture/Decorations"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Pot" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
-position = Vector2(1290, 581)
-
-[node name="Pot2" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
-position = Vector2(1287, 632)
-
-[node name="Pot3" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
-position = Vector2(1296, 678)
-
-[node name="Pot4" parent="Furniture/Decorations/Pots" instance=ExtResource("12_b10nm")]
-position = Vector2(1291, 722)
-
-[node name="Pasta" type="Control" parent="Furniture/Decorations"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PastaBox" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
-position = Vector2(1189, 565)
-
-[node name="PastaBox2" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
-position = Vector2(1193, 612)
-
-[node name="PastaBox3" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
-position = Vector2(1192, 648)
-
-[node name="PastaBox4" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
-position = Vector2(1198, 695)
-
-[node name="PastaBox5" parent="Furniture/Decorations/Pasta" instance=ExtResource("13_fhlu0")]
-position = Vector2(1199, 741)
-
-[node name="Tofu_Boxes" type="Control" parent="Furniture/Decorations"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TofuBox" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
-position = Vector2(996, 576)
-
-[node name="TofuBox2" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
-position = Vector2(995, 623)
-
-[node name="TofuBox3" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
-position = Vector2(1046, 576)
-
-[node name="TofuBox4" parent="Furniture/Decorations/Tofu_Boxes" instance=ExtResource("14_44tr1")]
-position = Vector2(1046, 623)
-
-[node name="Rice_Boxes" type="Control" parent="Furniture/Decorations"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="RiceBox" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
-position = Vector2(1098, 577)
-
-[node name="RiceBox2" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
-position = Vector2(1138, 576)
-
-[node name="RiceBox3" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
-position = Vector2(1097, 615)
-
-[node name="RiceBox4" parent="Furniture/Decorations/Rice_Boxes" instance=ExtResource("15_pmxqn")]
-position = Vector2(1143, 616)
-
-[node name="PlateWithTortillas" parent="Furniture/Decorations" instance=ExtResource("16_gs5q7")]
-position = Vector2(1063, 706)
+[node name="BambooChest" parent="Middle" instance=ExtResource("9_esopp")]
+position = Vector2(1062, 294)
 
 [node name="Player" parent="." instance=ExtResource("17_pmxqn")]
-position = Vector2(635, 502)
+position = Vector2(436, 489)
+
+[node name="Foreground" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Countertops" type="Control" parent="Foreground"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EmptyCountertopTop4" parent="Foreground/Countertops" instance=ExtResource("5_5rrr5")]
+position = Vector2(1057, 672)
+
+[node name="EmptyCountertopTop3" parent="Foreground/Countertops" instance=ExtResource("5_5rrr5")]
+position = Vector2(1249, 673)
+
+[node name="FoodAndPots" type="Control" parent="Foreground"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pots" type="Control" parent="Foreground/FoodAndPots"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pot" parent="Foreground/FoodAndPots/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1290, 581)
+
+[node name="Pot2" parent="Foreground/FoodAndPots/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1287, 632)
+
+[node name="Pot3" parent="Foreground/FoodAndPots/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1296, 678)
+
+[node name="Pot4" parent="Foreground/FoodAndPots/Pots" instance=ExtResource("12_b10nm")]
+position = Vector2(1291, 722)
+
+[node name="Pasta" type="Control" parent="Foreground/FoodAndPots"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PastaBox" parent="Foreground/FoodAndPots/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1189, 565)
+
+[node name="PastaBox2" parent="Foreground/FoodAndPots/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1193, 612)
+
+[node name="PastaBox3" parent="Foreground/FoodAndPots/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1192, 648)
+
+[node name="PastaBox4" parent="Foreground/FoodAndPots/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1198, 695)
+
+[node name="PastaBox5" parent="Foreground/FoodAndPots/Pasta" instance=ExtResource("13_fhlu0")]
+position = Vector2(1199, 741)
+
+[node name="Tofu_Boxes" type="Control" parent="Foreground/FoodAndPots"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TofuBox" parent="Foreground/FoodAndPots/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(996, 576)
+
+[node name="TofuBox2" parent="Foreground/FoodAndPots/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(995, 623)
+
+[node name="TofuBox3" parent="Foreground/FoodAndPots/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(1046, 576)
+
+[node name="TofuBox4" parent="Foreground/FoodAndPots/Tofu_Boxes" instance=ExtResource("14_44tr1")]
+position = Vector2(1046, 623)
+
+[node name="Rice_Boxes" type="Control" parent="Foreground/FoodAndPots"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RiceBox" parent="Foreground/FoodAndPots/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1098, 577)
+
+[node name="RiceBox2" parent="Foreground/FoodAndPots/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1138, 576)
+
+[node name="RiceBox3" parent="Foreground/FoodAndPots/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1097, 615)
+
+[node name="RiceBox4" parent="Foreground/FoodAndPots/Rice_Boxes" instance=ExtResource("15_pmxqn")]
+position = Vector2(1143, 616)
+
+[node name="PlateWithTortillas" parent="Foreground/FoodAndPots" instance=ExtResource("16_gs5q7")]
+position = Vector2(1063, 706)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=46 format=3 uid="uid://3wxictvrov2"]
+[gd_scene load_steps=49 format=3 uid="uid://3wxictvrov2"]
 
+[ext_resource type="Script" uid="uid://c1u7st8em41o3" path="res://Scenes/player.gd" id="1_1iu4k"]
 [ext_resource type="Texture2D" uid="uid://cekmidtrddh6b" path="res://Assets/player/left/walking_1.png" id="1_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://bjawixxtq1e7r" path="res://Assets/player/front/walking_1.png" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://in53255u5741" path="res://Assets/player/front/walking_2.png" id="2_gntrk"]
@@ -19,6 +20,123 @@
 [ext_resource type="Texture2D" uid="uid://ds40hefmcjvuf" path="res://Assets/player/cutting/1.png" id="17_ulo2v"]
 [ext_resource type="Texture2D" uid="uid://d22hiahh0k6cd" path="res://Assets/player/cutting/2.png" id="18_1iu4k"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_1iu4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ulo2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1iu4k")
+}],
+"loop": true,
+"name": &"cutting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kyqiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gntrk")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_glx4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_miouo")
+}],
+"loop": true,
+"name": &"walk_down_carrying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bhhdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_miouo")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_arntx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lslt6")
+}],
+"loop": true,
+"name": &"walk_left_carrying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ksbbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_glx4g")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_o3h8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1e7my")
+}],
+"loop": true,
+"name": &"walk_right_carrying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_megsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yoq75")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_o3h8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1e7my")
+}],
+"loop": true,
+"name": &"walk_up_carrying",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5ixxa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_kyqiw")]
+}
+
 [sub_resource type="Animation" id="Animation_dewec"]
 resource_name = "new_animation"
 length = 0.4
@@ -36,7 +154,13 @@ tracks/0/keys = {
 "values": [ExtResource("1_kyqiw"), ExtResource("2_gntrk")]
 }
 
-[sub_resource type="Animation" id="Animation_5ixxa"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nn08x"]
+_data = {
+&"RESET": SubResource("Animation_5ixxa"),
+&"new_animation": SubResource("Animation_dewec")
+}
+
+[sub_resource type="Animation" id="Animation_1e7my"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -49,12 +173,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_kyqiw")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nn08x"]
-_data = {
-&"RESET": SubResource("Animation_5ixxa"),
-&"new_animation": SubResource("Animation_dewec")
 }
 
 [sub_resource type="Animation" id="Animation_o3h8g"]
@@ -74,7 +192,13 @@ tracks/0/keys = {
 "values": [ExtResource("4_megsn"), ExtResource("5_yoq75")]
 }
 
-[sub_resource type="Animation" id="Animation_1e7my"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_arntx"]
+_data = {
+&"RESET": SubResource("Animation_1e7my"),
+&"new_animation": SubResource("Animation_o3h8g")
+}
+
+[sub_resource type="Animation" id="Animation_ulo2v"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -86,13 +210,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_kyqiw")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_arntx"]
-_data = {
-&"RESET": SubResource("Animation_1e7my"),
-&"new_animation": SubResource("Animation_o3h8g")
+"values": [ExtResource("5_yoq75")]
 }
 
 [sub_resource type="Animation" id="Animation_lslt6"]
@@ -112,7 +230,13 @@ tracks/0/keys = {
 "values": [ExtResource("6_ksbbd"), ExtResource("7_glx4g")]
 }
 
-[sub_resource type="Animation" id="Animation_ulo2v"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1iu4k"]
+_data = {
+&"RESET": SubResource("Animation_ulo2v"),
+&"new_animation": SubResource("Animation_lslt6")
+}
+
+[sub_resource type="Animation" id="Animation_5v66d"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -124,13 +248,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_yoq75")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1iu4k"]
-_data = {
-&"RESET": SubResource("Animation_ulo2v"),
-&"new_animation": SubResource("Animation_lslt6")
+"values": [ExtResource("7_glx4g")]
 }
 
 [sub_resource type="Animation" id="Animation_m0x7a"]
@@ -150,7 +268,13 @@ tracks/0/keys = {
 "values": [ExtResource("1_bhhdu"), ExtResource("8_miouo")]
 }
 
-[sub_resource type="Animation" id="Animation_5v66d"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x63xi"]
+_data = {
+&"RESET": SubResource("Animation_5v66d"),
+&"new_animation": SubResource("Animation_m0x7a")
+}
+
+[sub_resource type="Animation" id="Animation_qidb7"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -162,13 +286,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_glx4g")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x63xi"]
-_data = {
-&"RESET": SubResource("Animation_5v66d"),
-&"new_animation": SubResource("Animation_m0x7a")
+"values": [ExtResource("1_bhhdu")]
 }
 
 [sub_resource type="Animation" id="Animation_i2e8t"]
@@ -188,7 +306,13 @@ tracks/0/keys = {
 "values": [ExtResource("9_glx4g"), ExtResource("10_miouo")]
 }
 
-[sub_resource type="Animation" id="Animation_qidb7"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_70hv0"]
+_data = {
+&"RESET": SubResource("Animation_qidb7"),
+&"new_animation": SubResource("Animation_i2e8t")
+}
+
+[sub_resource type="Animation" id="Animation_u7x0b"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -201,12 +325,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_bhhdu")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_70hv0"]
-_data = {
-&"RESET": SubResource("Animation_qidb7"),
-&"new_animation": SubResource("Animation_i2e8t")
 }
 
 [sub_resource type="Animation" id="Animation_8flut"]
@@ -226,7 +344,13 @@ tracks/0/keys = {
 "values": [ExtResource("11_o3h8g"), ExtResource("12_1e7my")]
 }
 
-[sub_resource type="Animation" id="Animation_u7x0b"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_utwlt"]
+_data = {
+&"RESET": SubResource("Animation_u7x0b"),
+&"new_animation": SubResource("Animation_8flut")
+}
+
+[sub_resource type="Animation" id="Animation_bhhdu"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -239,12 +363,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_bhhdu")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_utwlt"]
-_data = {
-&"RESET": SubResource("Animation_u7x0b"),
-&"new_animation": SubResource("Animation_8flut")
 }
 
 [sub_resource type="Animation" id="Animation_kih0c"]
@@ -264,7 +382,13 @@ tracks/0/keys = {
 "values": [ExtResource("13_o3h8g"), ExtResource("14_1e7my")]
 }
 
-[sub_resource type="Animation" id="Animation_bhhdu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lyrkg"]
+_data = {
+&"RESET": SubResource("Animation_bhhdu"),
+&"new_animation": SubResource("Animation_kih0c")
+}
+
+[sub_resource type="Animation" id="Animation_megsn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -277,12 +401,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_bhhdu")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lyrkg"]
-_data = {
-&"RESET": SubResource("Animation_bhhdu"),
-&"new_animation": SubResource("Animation_kih0c")
 }
 
 [sub_resource type="Animation" id="Animation_c43xd"]
@@ -302,7 +420,13 @@ tracks/0/keys = {
 "values": [ExtResource("15_arntx"), ExtResource("16_lslt6")]
 }
 
-[sub_resource type="Animation" id="Animation_megsn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_avx33"]
+_data = {
+&"RESET": SubResource("Animation_megsn"),
+&"new_animation": SubResource("Animation_c43xd")
+}
+
+[sub_resource type="Animation" id="Animation_yoq75"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -315,12 +439,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_bhhdu")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_avx33"]
-_data = {
-&"RESET": SubResource("Animation_megsn"),
-&"new_animation": SubResource("Animation_c43xd")
 }
 
 [sub_resource type="Animation" id="Animation_rxg2u"]
@@ -340,75 +458,71 @@ tracks/0/keys = {
 "values": [ExtResource("17_ulo2v"), ExtResource("18_1iu4k")]
 }
 
-[sub_resource type="Animation" id="Animation_yoq75"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_bhhdu")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xixlo"]
 _data = {
 &"RESET": SubResource("Animation_yoq75"),
 &"new_animation": SubResource("Animation_rxg2u")
 }
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ulo2v"]
+radius = 41.5
+height = 252.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Player" type="Area2D"]
+script = ExtResource("1_1iu4k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(5, 0)
 scale = Vector2(8, 8)
-texture = ExtResource("1_bhhdu")
+sprite_frames = SubResource("SpriteFrames_1iu4k")
+animation = &"cutting"
 
-[node name="Walk_Down" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Down" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_nn08x")
 }
 
-[node name="Walk_Up" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Up" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_arntx")
 }
 
-[node name="Walk_Right" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Right" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_1iu4k")
 }
 
-[node name="Walk_Left" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Left" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_x63xi")
 }
 
-[node name="Walk_Carrying_Down" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Carrying_Down" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_70hv0")
 }
 
-[node name="Walk_Carrying_Up" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Carrying_Up" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_utwlt")
 }
 
-[node name="Walk_Carrying_Right" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Carrying_Right" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_lyrkg")
 }
 
-[node name="Walk_Carrying_Left" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Walk_Carrying_Left" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_avx33")
 }
 
-[node name="Cutting" type="AnimationPlayer" parent="Sprite2D"]
+[node name="Cutting" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_xixlo")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+shape = SubResource("CapsuleShape2D_ulo2v")
