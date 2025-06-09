@@ -69,16 +69,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="EmptyCountertop3" parent="Middle/Countertops" instance=ExtResource("4_ienac")]
-position = Vector2(383, 191)
+position = Vector2(480, 286)
 
 [node name="CountertopForOrders" parent="Middle/Countertops" instance=ExtResource("8_5rrr5")]
 position = Vector2(1248, 287)
 
 [node name="EmptyCountertop" parent="Middle/Countertops" instance=ExtResource("4_ienac")]
-position = Vector2(575, 191)
+position = Vector2(671, 286)
 
 [node name="EmptyCountertop2" parent="Middle/Countertops" instance=ExtResource("4_ienac")]
-position = Vector2(192, 191)
+position = Vector2(289, 286)
 
 [node name="EmptyCountertopTop" parent="Middle/Countertops" instance=ExtResource("5_5rrr5")]
 position = Vector2(95, 288)
@@ -196,3 +196,8 @@ position = Vector2(1143, 616)
 
 [node name="PlateWithTortillas" parent="Foreground/FoodAndPots" instance=ExtResource("16_gs5q7")]
 position = Vector2(1063, 706)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, 0, -2, 769, 1346, 769, 1344, 0, 1404, -90, 1399, 845, -73, 833, -71, -85, 1406, -90, 1348, -2)

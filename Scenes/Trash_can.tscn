@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0qs303yx8juo"]
+[gd_scene load_steps=3 format=3 uid="uid://d0qs303yx8juo"]
 
 [ext_resource type="Texture2D" uid="uid://dee67wldutmw3" path="res://Assets/kitchen/trash_can.png" id="1_fcl2b"]
 
-[node name="TrashCan" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcl2b"]
+size = Vector2(118, 80)
+
+[node name="TrashCan" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(8, 8)
 texture = ExtResource("1_fcl2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -41)
+shape = SubResource("RectangleShape2D_fcl2b")

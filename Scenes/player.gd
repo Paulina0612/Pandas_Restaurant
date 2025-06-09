@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
@@ -11,46 +11,48 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	check_if_cutting()
 	
 	if !if_cutting:
-		var velocity = Vector2.ZERO # The player's movement vector.
+		var panda_velocity = Vector2.ZERO # The player's movement vector.
 		if Input.is_action_pressed("ui_right"):
-			velocity.x += 1
+			panda_velocity.x += 1
 		if Input.is_action_pressed("ui_left"):
-			velocity.x -= 1
+			panda_velocity.x -= 1
 		if Input.is_action_pressed("ui_down"):
-			velocity.y += 1
+			panda_velocity.y += 1
 		if Input.is_action_pressed("ui_up"):
-			velocity.y -= 1
+			panda_velocity.y -= 1
 
-		if velocity.length() > 0:
-			velocity = velocity.normalized() * speed
+		if panda_velocity.length() > 0:
+			panda_velocity = panda_velocity.normalized() * speed
 			$AnimatedSprite2D.play()
 		else:
 			$AnimatedSprite2D.stop()
 			
-		position += velocity * delta
-		position = position.clamp(Vector2.ZERO, screen_size)
+		#position += panda_velocity * delta
+		#position = position.clamp(Vector2.ZERO, screen_size)
+		velocity=panda_velocity
+		move_and_slide()
 		
 		if !if_carrying:
-			if velocity.x > 0:
+			if panda_velocity.x > 0:
 				$AnimatedSprite2D.animation = "walk_right"
-			elif velocity.x < 0:
+			elif panda_velocity.x < 0:
 				$AnimatedSprite2D.animation = "walk_left"
-			elif velocity.y < 0:
+			elif panda_velocity.y < 0:
 				$AnimatedSprite2D.animation = "walk_up"
-			elif velocity.y > 0:
+			elif panda_velocity.y > 0:
 				$AnimatedSprite2D.animation = "walk_down"
 		else:
-			if velocity.x > 0:
+			if panda_velocity.x > 0:
 				$AnimatedSprite2D.animation = "walk_right_carrying"
-			elif velocity.x < 0:
+			elif panda_velocity.x < 0:
 				$AnimatedSprite2D.animation = "walk_left_carrying"
-			elif velocity.y < 0:
+			elif panda_velocity.y < 0:
 				$AnimatedSprite2D.animation = "walk_up_carrying"
-			elif velocity.y > 0:
+			elif panda_velocity.y > 0:
 				$AnimatedSprite2D.animation = "walk_down_carrying"
 	else: 
 		$AnimatedSprite2D.animation = "cutting"
@@ -58,10 +60,4 @@ func _process(delta):
 
 func check_if_cutting():
 	pass
-
-	
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
 	
