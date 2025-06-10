@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://3wxictvrov2"]
+[gd_scene load_steps=31 format=3 uid="uid://3wxictvrov2"]
 
 [ext_resource type="Script" uid="uid://c1u7st8em41o3" path="res://Scenes/player.gd" id="1_1iu4k"]
 [ext_resource type="Texture2D" uid="uid://cekmidtrddh6b" path="res://Assets/player/left/walking_1.png" id="1_bhhdu"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://dl6sqxtalodcf" path="res://Assets/player/left/walking_carrying_2.png" id="16_lslt6"]
 [ext_resource type="Texture2D" uid="uid://ds40hefmcjvuf" path="res://Assets/player/cutting/1.png" id="17_ulo2v"]
 [ext_resource type="Texture2D" uid="uid://d22hiahh0k6cd" path="res://Assets/player/cutting/2.png" id="18_1iu4k"]
+[ext_resource type="Texture2D" uid="uid://cfjoyb2gkmaqs" path="res://Assets/food/bamboo.png" id="28_utwlt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1iu4k"]
 animations = [{
@@ -206,8 +207,16 @@ texture_filter = 1
 position = Vector2(5, 0)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_1iu4k")
-animation = &"standing_up_carrying"
+animation = &"standing_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_ulo2v")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="FoodSprite" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(1, 19)
+scale = Vector2(4, 3.8125)
+texture = ExtResource("28_utwlt")

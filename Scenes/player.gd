@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var if_cutting = false
-var if_carrying = false
+var if_carrying = true
 var dir = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -11,6 +11,8 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	$AnimatedSprite2D.animation = "standing_down"
 	dir = Vector2.DOWN
+	$Node2D/FoodSprite.hide()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -85,11 +87,24 @@ func _process(_delta):
 				elif dir == Vector2.LEFT:
 					$AnimatedSprite2D.animation = "standing_left"
 					
-	else: 
+	else:
 		$AnimatedSprite2D.animation = "cutting"
 
 
 func check_if_cutting():
+	if if_carrying:
+		#Transform according to player position
+		if dir == Vector2.DOWN:
+			$Node2D/FoodSprite.position.x = $Node2D.position.x 
+			$Node2D/FoodSprite.show()
+		elif dir == Vector2.UP:
+			$Node2D/FoodSprite.hide()
+		elif dir == Vector2.RIGHT:
+			$Node2D/FoodSprite.position.x = $Node2D.position.x + 80
+			$Node2D/FoodSprite.show()
+		elif dir == Vector2.LEFT:
+			$Node2D/FoodSprite.position.x = $Node2D.position.x - 80
+			$Node2D/FoodSprite.show()
 	pass
 	
 	
