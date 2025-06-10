@@ -195,9 +195,22 @@ position = Vector2(1097, 615)
 position = Vector2(1143, 616)
 
 [node name="PlateWithTortillas" parent="Foreground/FoodAndPots" instance=ExtResource("16_gs5q7")]
-position = Vector2(1063, 706)
+position = Vector2(1030, 710)
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(0, 0, -2, 769, 1346, 769, 1344, 0, 1404, -90, 1399, 845, -73, 833, -71, -85, 1406, -90, 1348, -2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 694.0
+offset_right = 399.0
+offset_bottom = 765.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 40
+text = "Pick up"
+
+[connection signal="ready" from="." to="." method="_on_ready"]

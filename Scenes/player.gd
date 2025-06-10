@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var if_cutting = false
-var if_carrying = true
+var if_carrying = false
 var dir = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -16,8 +16,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	check_if_cutting()
+	Level.label_text = ""
 	
 	if !if_cutting:
+		check_collisions()
+			
 		var panda_velocity = Vector2.ZERO # The player's movement vector.
 		if Input.is_action_pressed("ui_right"):
 			panda_velocity.x += 1
@@ -89,3 +92,28 @@ func _process(_delta):
 func check_if_cutting():
 	pass
 	
+	
+func check_collisions():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider():
+			if collision.get_collider().name=="TofuBox" and !if_carrying:
+				Level.label_text = "Pick up tofu box"
+			elif collision.get_collider().name=="BambooChest" and !if_carrying:
+				Level.label_text = "Pick up bamboo"
+			elif collision.get_collider().name=="PastaBox" and !if_carrying:
+				Level.label_text = "Pick up pasta box"
+			elif collision.get_collider().name=="RiceBox" and !if_carrying:
+				Level.label_text = "Pick up rice box"
+			elif collision.get_collider().name=="TrashCan" and if_carrying:
+				Level.label_text = "Throw away"
+			elif collision.get_collider().name=="Pot" and !if_carrying:
+				Level.label_text = "Pick up pot"
+			elif collision.get_collider().name=="PlateWithTortillas" and !if_carrying:
+				Level.label_text = "Pick up a tortilla"
+			elif collision.get_collider().name=="CountertopForOrders" and if_carrying:
+				Level.label_text = "Serve"
+			elif collision.get_collider().name=="CuttingBoard" and if_carrying:
+				Level.label_text = "Cut"
+			elif collision.get_collider().name=="Oven" and if_carrying:
+				Level.label_text = "Cook"

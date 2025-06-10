@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cco1igeexjay5" path="res://Assets/kitchen/countertop.png" id="1_dpeyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rvn8"]
-size = Vector2(190, 51.5)
+size = Vector2(190, 23.5)
 
 [node name="EmptyCountertop" type="StaticBody2D"]
 
@@ -14,5 +14,5 @@ scale = Vector2(6, 6)
 texture = ExtResource("1_dpeyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -25.75)
+position = Vector2(1, -39.75)
 shape = SubResource("RectangleShape2D_2rvn8")

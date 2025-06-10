@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://hhbcbranew5u"]
+[gd_scene load_steps=3 format=3 uid="uid://hhbcbranew5u"]
 
 [ext_resource type="Texture2D" uid="uid://no6cl52jnd3a" path="res://Assets/kitchen/pot.png" id="1_3rhbi"]
 
-[node name="Pot" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rhbi"]
+size = Vector2(86, 79)
+
+[node name="Pot" type="StaticBody2D"]
 
 [node name="Pot" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 2)
 scale = Vector2(6, 6)
 texture = ExtResource("1_3rhbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 5.5)
+shape = SubResource("RectangleShape2D_3rhbi")

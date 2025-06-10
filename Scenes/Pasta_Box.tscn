@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bra37mis0p5p5"]
+[gd_scene load_steps=3 format=3 uid="uid://bra37mis0p5p5"]
 
 [ext_resource type="Texture2D" uid="uid://cntqmmb3qj356" path="res://Assets/food/pasta.png" id="1_5ytao"]
 
-[node name="PastaBox" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ytao"]
+size = Vector2(32, 51)
+
+[node name="PastaBox" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("1_5ytao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_5ytao")

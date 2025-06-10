@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dee67wldutmw3" path="res://Assets/kitchen/trash_can.png" id="1_fcl2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcl2b"]
-size = Vector2(118, 80)
+size = Vector2(118, 42)
 
 [node name="TrashCan" type="StaticBody2D"]
 
@@ -13,5 +13,5 @@ scale = Vector2(8, 8)
 texture = ExtResource("1_fcl2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -41)
+position = Vector2(-3, -60)
 shape = SubResource("RectangleShape2D_fcl2b")

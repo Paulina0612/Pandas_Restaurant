@@ -1,10 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn6q4ydkbvp6m"]
+[gd_scene load_steps=4 format=3 uid="uid://dn6q4ydkbvp6m"]
 
+[ext_resource type="Script" uid="uid://bk1ke0l1hpamc" path="res://Scenes/tofu_box.gd" id="1_bhhml"]
 [ext_resource type="Texture2D" uid="uid://cjlldcw43s6e6" path="res://Assets/food/tofu.png" id="1_puck3"]
 
-[node name="TofuBox" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhpvl"]
+size = Vector2(38, 36)
+
+[node name="TofuBox" type="StaticBody2D"]
+script = ExtResource("1_bhhml")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(5, 5)
 texture = ExtResource("1_puck3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_uhpvl")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

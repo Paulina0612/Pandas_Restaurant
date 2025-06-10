@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2ak2347qucxm"]
+[gd_scene load_steps=3 format=3 uid="uid://b2ak2347qucxm"]
 
 [ext_resource type="Texture2D" uid="uid://c8dvx4uuocbuv" path="res://Assets/food/rice.png" id="1_7q3if"]
 
-[node name="RiceBox" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q3if"]
+size = Vector2(40, 30)
+
+[node name="RiceBox" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(5, 5)
 texture = ExtResource("1_7q3if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_7q3if")
