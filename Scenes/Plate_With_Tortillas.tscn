@@ -2,9 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dggjuwf46ygy6" path="res://Assets/food/plate_with_tortillas.png" id="1_lylia"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lylia"]
-radius = 38.5
-height = 150.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lylia"]
+size = Vector2(106.999, 144)
 
 [node name="PlateWithTortillas" type="StaticBody2D"]
 
@@ -14,6 +13,6 @@ scale = Vector2(6, 6)
 texture = ExtResource("1_lylia")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
+position = Vector2(3.8147e-06, -3.5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_lylia")
+shape = SubResource("RectangleShape2D_lylia")

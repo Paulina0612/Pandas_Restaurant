@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://3wxictvrov2"]
+[gd_scene load_steps=32 format=3 uid="uid://3wxictvrov2"]
 
 [ext_resource type="Script" uid="uid://c1u7st8em41o3" path="res://Scenes/player.gd" id="1_1iu4k"]
 [ext_resource type="Texture2D" uid="uid://cekmidtrddh6b" path="res://Assets/player/left/walking_1.png" id="1_bhhdu"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://ds40hefmcjvuf" path="res://Assets/player/cutting/1.png" id="17_ulo2v"]
 [ext_resource type="Texture2D" uid="uid://d22hiahh0k6cd" path="res://Assets/player/cutting/2.png" id="18_1iu4k"]
 [ext_resource type="Texture2D" uid="uid://cfjoyb2gkmaqs" path="res://Assets/food/bamboo.png" id="28_utwlt"]
+[ext_resource type="Script" uid="uid://u5pwg4mdb3xm" path="res://Scenes/food_sprite.gd" id="29_kih0c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1iu4k"]
 animations = [{
@@ -217,6 +218,7 @@ shape = SubResource("CapsuleShape2D_ulo2v")
 
 [node name="FoodSprite" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(1, 19)
+position = Vector2(5.96046e-08, 7)
 scale = Vector2(4, 3.8125)
 texture = ExtResource("28_utwlt")
+script = ExtResource("29_kih0c")
